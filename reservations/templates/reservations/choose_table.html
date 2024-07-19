@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Choose Table</title>
+</head>
+<body>
+    <h1>Choose a Table</h1>
+    <form method="post" action="{% url 'save_reservation' %}">
+        {% csrf_token %}
+        <input type="hidden" name="reservation_id" value="{{ reservation.id }}">
+        <label for="table">Select Table:</label>
+        <select name="table" id="table" required>
+            {% for table in tables %}
+                <option value="{{ table.id }}">{{ table }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Save Reservation</button>
+    </form>
+</body>
+</html>

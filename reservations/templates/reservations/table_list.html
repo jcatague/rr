@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table List</title>
+</head>
+<body>
+    <h1>Table List</h1>
+    <ul>
+        {% for table in tables %}
+            <li>{{ table }} - {% if table.available %}Available{% else %}Not Available{% endif %}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
